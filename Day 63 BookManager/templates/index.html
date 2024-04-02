@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Library</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+    </style>
+  </head >
+  <body bgcolor="PAPAYAWHIP">
+    <h1 align="center">My Library</h1>
+
+    {% if all_books %}
+        <ul>
+            {% for book in all_books %}
+            <li>{{ book.title }} by {{ book.author }} - Rating: {{ book.rating }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p> No Books Found yet.</p>
+    {% endif %}
+
+    <a href="http://127.0.0.1:5000/add">Add New Book</a>
+  </body>
+</html>
